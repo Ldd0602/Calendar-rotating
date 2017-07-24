@@ -1,0 +1,88 @@
+ul li{
+	float: left;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+/*样式清空*/
+body, h1, h2,h3,h4,h5,h6,p,dl,dd,ol,ul,form, input,textarea,th,td,select { margin:0; padding:0;}
+em,i { font-style:normal;}
+li { list-style:none;}
+a { text-decoration:none; cursor:pointer; color: black;}
+a:focus {outline:none;}
+b{ font-weight:normal;}
+img { border:none; vertical-align:top;}
+input, textarea {vertical-align: middle;outline: none; border:none; background:none;box-sizing:content-box;}
+textarea { resize:none; overflow:auto; }
+table { border-spacing:0; border:none; border-collapse:collapse;}
+body, input, select, button, textarea { font-family:'PingFang', "微软雅黑";background:#fff;font-size: 12px;}
+html, body {position: relative;height: 100%;}
+
+
+.topInfo{
+	margin-top:4rem; 
+	margin-left: 1.6rem;
+	background-color:#fff; 
+}
+.topInfo ul{
+	float: left;
+}
+.topInfo ul li{
+	display: inline-block;
+	margin-right:9px;
+	width:0.46rem;
+	height: 0.6rem;
+	position: relative;
+}
+.topInfo ul li p{
+	position: absolute;
+	top: 0 ;
+	left: 0;
+	z-index: 9;
+}
+.topInfo ul li .num{
+	display: none;
+}
+.topInfo ul li .rotatePart{
+	width: 100%;
+	height: 100%;
+	background: #d0bb8e;
+}
+.playani06{
+	-webkit-animation:rotate 0.2s 1s linear;
+    animation:rotate 0.2s 1s linear;
+}
+.playani05{
+	-webkit-animation:rotate 0.2s 1.1s linear;
+    animation:rotate 0.2s 1.1s linear;
+}
+.playani04{
+	-webkit-animation:rotate 0.2s 1.2s linear;
+    animation:rotate 0.2s 1.2s linear;
+}
+.playani03{
+	-webkit-animation:rotate 0.2s 1.3s linear;
+    animation:rotate 0.2s 1.3s linear;
+}
+.playani02{
+	-webkit-animation:rotate 0.2s 1.4s linear;
+    animation:rotate 0.2s 1.4s linear;
+}
+.playani01{
+	-webkit-animation:rotate 0.2s 1.5s linear;
+    animation:rotate 0.2s 1.5s linear;
+}
+.playani00{
+	-webkit-animation:rotate 0.2s 1.6s linear;
+    animation:rotate 0.2s 1.6s linear;
+} 
+
+@keyframes rotate {
+    0% {
+       transform:perspective(0) rotateX(0deg); 
+    }
+    100% {
+       transform:perspective(2rem) rotateX(180deg); 
+    }
+}
