@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <meta content="yes" name="app-mobile-web-app-capable">
+    <meta content="black" name="app-mobile-web-app-capable-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+	<title>爱心公益</title>
+    <script type="text/javascript">
+        //rem 计算
+        !function () {
+            var docEl = document.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = document.body.scrollWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = (100 * (clientWidth / 750) > 55.3333 ? 55.3333 : 100 * (clientWidth / 750)) + 'px';
+                    };
+            if (!document.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            document.addEventListener('DOMContentLoaded', recalc, false);
+        }();
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<!-- 	头部-->
+ 		<div class="topInfo">
+				<ul>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num0.png" /></p>
+                        <p class="num"><img src="img/num1.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num1.png" /></p>
+                        <p class="num"><img src="img/num2.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num2.png" /></p>
+                        <p class="num"><img src="img/num3.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num3.png" /></p>
+                        <p class="num"><img src="img/num4.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num4.png" /></p>
+                        <p class="num"><img src="img/num5.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num5.png" /></p>
+                        <p class="num"><img src="img/num6.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+					<li class="textCount">
+						<p class="numPlus"><img src="img/num6.png" /></p>
+                        <p class="num"><img src="img/num0.png" /></p>
+                        <div class="rotatePart"></div>
+					</li>
+				</ul>
+		</div>
+	<script src='jquery-1.10.1.min.js'></script>
+	<script>      
+	// 捐赠总数
+	   		var lastNum='0000000'; 
+	   		var currentNum='1239568';  
+	   		var numPlus = $('.numPlus');
+	        var num = $('.num');
+	        numChanged(lastNum,numPlus);  
+	        numChanged(currentNum,num);   
+	   		function numChanged(paramF,paramS){  
+	   			$('li.textCount:nth-child(1)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(0, 1) + '.png');
+	            $('li.textCount:nth-child(2)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(1, 2) + '.png');
+	            $('li.textCount:nth-child(3)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(2,3) + '.png');
+	            $('li.textCount:nth-child(4)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(3,4) + '.png');
+	            $('li.textCount:nth-child(5)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(4,5) + '.png');
+	            $('li.textCount:nth-child(6)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(5,6) + '.png');
+	            $('li.textCount:nth-child(7)').find(paramS).children('img').attr('src', 'img/num' + paramF.substring(6) + '.png');
+	   		}
+	// 添加捐赠数值变化的动画
+	        var numPlusObj=$("li.textCount");
+			for(var j=0;j<numPlusObj.length;j++){
+	 			var thisLi=$(numPlusObj[j]);
+	 			var imgPlusC='imgPlus'+j;  
+	 			var imgC='img'+j;  
+	 			var imgPlusSrc=thisLi.find('.numPlus').children('img').attr('src');  
+	 			var imgSrc=thisLi.find('.num').children('img').attr('src');    
+	 			imgPlusC=imgPlusSrc;   
+	 			imgC=imgSrc;
+	 			if (imgPlusC != imgC) {   
+	 				
+		            thisLi.find('.rotatePart').addClass('playani0'+j);
+		         	Timeout(1800-(j*100),thisLi);
+	        	}
+			}
+	       function Timeout(time,item)  
+	       {
+                 setTimeout(function(){
+	                $(item).find('.numPlus').css({'display':'none'});	
+        	        $(item).find('.num').css({'display':'block'});
+        	    },time);
+	       }
+	</script>
+</body>
+</html>
